@@ -3,7 +3,7 @@ import VideoListEntry from './VideoListEntry'
 
 
 
-const VideoList = ({data}) => {
+const VideoList = ({fileData,searchData}) => {
   
 
 
@@ -11,7 +11,7 @@ const VideoList = ({data}) => {
     <div>
       <h1>Video List</h1>
       
-         <VideoListEntry data={data}/>
+         <VideoListEntry fileData={fileData} searchData={searchData}/>
       
     </div>
   )

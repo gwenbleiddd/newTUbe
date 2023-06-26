@@ -2,9 +2,9 @@ import React from 'react'
 import YouTube from 'react-youtube'
 
 
-const VideoPlayer = ({data}) => {
+const VideoPlayer = ({fileData}) => {
 
-   const post = data.find((dataItem)=> dataItem.id);
+   const post = fileData.find((dataItem)=> dataItem.id);
    const youtubeID = post.id.videoId;
    const onReady = (e) => {
     console.log(e.target); 

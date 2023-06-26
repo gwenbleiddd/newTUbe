@@ -2,17 +2,20 @@ import React from 'react'
 //import YouTube from 'react-youtube'
 
 
-const VideoListEntry = ({data}) => {
-   let post = ''
-  //const post = data.forEach((dataItem)=> dataItem.id);
-  //const youtubeID = post.id.videoId;
+const VideoListEntry = ({fileData,searchData}) => {
+  
  
 
   return (
   <div className='entry'>
+    
       <ul>
-        {data.map((val,i)=>{
-       return <li>
+
+        {
+        
+        fileData.map((val,i)=>{
+          if(val.snippet.title===searchData){//find a way to searh by a piece of the string
+       return <li key={val.id.videoId}>
         <div className='thumb'>
         <img src={val.snippet.thumbnails.default.url} alt=''></img>
       </div>
@@ -21,6 +24,9 @@ const VideoListEntry = ({data}) => {
         <h6>{val.snippet.description}</h6>
       </div>
         </li>
+        
+        }
+        return null;   
   })}
 </ul>
      

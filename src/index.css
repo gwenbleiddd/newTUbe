@@ -82,9 +82,9 @@
 
 
 
-.titleDescrip{
-    /* border-style: groove; */
-}
+/* .titleDescrip{
+    border-style: groove;
+} */
 
 .titleDescrip h6{
     font-weight: lighter;
@@ -97,9 +97,9 @@
     font-weight: bold;
 }
 
-.thumb{
-    /* border-style: groove; */
-}
+/* .thumb{
+    border-style: groove;
+} */
 
 .thumb img{
     width: 100%;
