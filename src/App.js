@@ -11,10 +11,10 @@ function App() {
   const[title,setTitle] = useState('');
   const[descrip,setDescrip] = useState('');
   const[apiData,setApiData] = useState([]);
+ 
 
-  // const getSearchData = (data) =>{
-  //   setUserInput(data)
-  // }
+
+ 
   const getSearchData = async data =>{
     setUserInput(data)
     const response = await youtubeApi.get("/search",{
@@ -23,40 +23,55 @@ function App() {
       }
     })
     setApiData(response.data.items);
-    console.log(response)
+    //console.log(response)
   }
 
-  const getVidKey = (key,title,descrip) =>{
+  const getVidData = (key,title,descrip) =>{
      setVidKey(key);
      setTitle(title);
      setDescrip(descrip);
   }
 
+  
+
 
   return (
     
-    <div className="App">
+  <div className="App">
         
-      
-      <div className="Left">
+      <div className='Header'>
+          <img src='../youtube_logo.png' alt='' width={150} height={150}></img>
         <div className="Search">
-          <Search onSubmit={getSearchData}/>
+           <Search onSubmit={getSearchData}/>
         </div>
-        <div className="VideoPlayer">
-          <VideoPlayer 
-          fileData={apiData} 
-          vidKey={vidKey}
-          title={title}
-          descrip={descrip}
-          />
-          
-        </div>
+
       </div>
+
+      <div className='Body'>
+        <div className="Left">
+        
+          <div className="VideoPlayer">
+            <VideoPlayer 
+              fileData={apiData} 
+              vidKey={vidKey}
+              title={title}
+              descrip={descrip}
+            />
+          
+         </div>
+      </div>
+
       <div className="Right">
         <div className='VideoList' >
-          <VideoList fileData={apiData} searchData={userInput} getVidKey={getVidKey}/>
+          <VideoList 
+          fileData={apiData} 
+          searchData={userInput} 
+          getVidData={getVidData}
+          />
         </div>
       </div>
+  </div>
+      
      
     </div>
   );

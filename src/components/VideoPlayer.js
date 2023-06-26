@@ -14,7 +14,7 @@ const VideoPlayer = ({vidKey,title,descrip}) => {
 
   return (
     <div>
-      <h1>Video Player</h1>
+      {/* <h1>Video Player</h1> */}
       <h3>{title}</h3>
       <p>{descrip}</p>
       <div className="player">

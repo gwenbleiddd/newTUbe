@@ -23,7 +23,7 @@ const Search = ({onSubmit}) => {
     
     <div>
      
-      <h1>Search section</h1>
+      {/* <h1>Search section</h1> */}
        
       <form onSubmit={sendInput}> 
         <input type='text'name='word' placeholder='Search...' onChange={collectInput}></input>
