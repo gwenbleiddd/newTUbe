@@ -1,21 +1,29 @@
 import React from 'react'
-import YouTube from 'react-youtube'
-import data from '../exampleVideoData.json'
+//import YouTube from 'react-youtube'
 
-const VideoListEntry = () => {
 
-  const post = data.find((dataItem)=> dataItem.id);
+const VideoListEntry = ({data}) => {
+   let post = ''
+  //const post = data.forEach((dataItem)=> dataItem.id);
   //const youtubeID = post.id.videoId;
+ 
 
   return (
-    <div className='entry'>
-      <div className='thumb'>
-        <img src={post.snippet.thumbnails.default.url}></img>
+  <div className='entry'>
+      <ul>
+        {data.map((val,i)=>{
+       return <li>
+        <div className='thumb'>
+        <img src={val.snippet.thumbnails.default.url} alt=''></img>
       </div>
       <div className='titleDescrip'>
-        <h6 className='title'>{post.snippet.title}</h6>
-        <h6>{post.snippet.description}</h6>
+        <h6 className='title'>{val.snippet.title}</h6>
+        <h6>{val.snippet.description}</h6>
       </div>
+        </li>
+  })}
+</ul>
+     
     </div>
   )
 }

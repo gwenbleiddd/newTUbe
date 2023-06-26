@@ -33,7 +33,7 @@ function App() {
       </div>
       <div className="Right">
         <div className='VideoList'>
-          <VideoList />
+          <VideoList data={data}/>
         </div>
       </div>
      
