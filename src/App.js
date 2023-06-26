@@ -1,19 +1,19 @@
 import Search from './components/Search'
 import VideoPlayer from './components/VideoPlayer'
 import VideoList from './components/VideoList'
-//import {useState ,useEffect } from 'react'
-//import data from './data.json'
 import data from './exampleVideoData.json'
 import { useState } from 'react'
 
 function App() {
-  const[userInput,setUserInput] = useState('balls');
-  // const[word,setWord] = useState('nigga');
-  // function onclick(){
-  //   return setWord(userInput);
-  // }
+  const[userInput,setUserInput] = useState('gibrish');
+  const[vidKey,setVidKey] = useState('');
+
   const getSearchData = (data) =>{
     setUserInput(data)
+  }
+
+  const getVidKey = (key) =>{
+     setVidKey(key);
   }
 //   const[vid,setVid] = useState([])
   
@@ -32,19 +32,19 @@ function App() {
   return (
     
     <div className="App">
-      
+        
       
       <div className="Left">
         <div className="Search">
           <Search onSubmit={getSearchData}/>
         </div>
         <div className="VideoPlayer">
-          <VideoPlayer fileData={data}/>
+          <VideoPlayer fileData={data} vidKey={vidKey}/>
         </div>
       </div>
       <div className="Right">
-        <div className='VideoList'>
-          <VideoList fileData={data} searchData={userInput}/>
+        <div className='VideoList' >
+          <VideoList fileData={data} searchData={userInput} getVidKey={getVidKey}/>
         </div>
       </div>
      

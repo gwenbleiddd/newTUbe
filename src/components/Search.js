@@ -3,7 +3,7 @@ import {ImSearch} from 'react-icons/im'
 
 
 const Search = ({onSubmit}) => {
-  const[input,setInput] = useState('');
+  const[input,setInput] = useState(' ');
 
   
 

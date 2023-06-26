@@ -2,14 +2,14 @@
   margin: 0 auto;
   width: 90%;
   display: grid;
-  background-color: aqua;
+  background-color: rgb(73, 75, 75);
   grid-template-columns: 2fr 1fr;
-  gap:.5rem;
+  gap:.2rem;
 }
 .Left{
     display: grid;
     grid-template-rows: 1fr;
-    gap:5rem;
+    gap:2rem;
     padding: 15px;
 }
 .Right{
@@ -59,7 +59,11 @@
     padding-bottom: 5px;
     padding-left: 10px;
     padding-top: 10px;
+    
 }
+
+
+
 
 .entry{
     /* border-style: groove; */
