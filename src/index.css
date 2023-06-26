@@ -1,10 +1,10 @@
 .App{
   margin: 0 auto;
-  width: 80%;
+  width: 90%;
   display: grid;
   background-color: aqua;
   grid-template-columns: 1fr 1fr;
-  gap:5rem;
+  gap:.5rem;
 }
 .Left{
     display: grid;
@@ -51,9 +51,39 @@
     padding: 15px;
 }
 .VideoList{
+    
     border-style: grove;
-    background-color: rgb(42, 61, 56);
+    background-color: rgb(131, 155, 148);
     border-radius: .5rem;
-    padding: 15px;
+    padding-left: 5px;
+    padding-right: 35px;
+}
+
+.entry{
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-style: groove;
+    width: 100%;
+    
+}
+
+.titleDescrip{
+    border-style: groove;
+   
+}
+.titleDescrip h6{
+    font-weight: lighter;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.titleDescrip .title{
+    font-weight: bold;
+}
+
+.thumb{
+    border-style: groove;
+    
 }
 

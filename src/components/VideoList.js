@@ -1,8 +1,9 @@
 import React from 'react'
+import VideoListEntry from './VideoListEntry'
+import {useState} from 'react'
 //import YouTube from 'react-youtube'
 
-const VideoList = () => {
-  
+const VideoList = ({data}) => {
   
 
 
@@ -10,7 +11,7 @@ const VideoList = () => {
     <div>
       <h1>Video List</h1>
       <ul>
-
+         <VideoListEntry />
       </ul>
     </div>
   )

@@ -6,7 +6,7 @@ import VideoList from './components/VideoList'
 import data from './exampleVideoData.json'
 
 function App() {
-//  const[vid,setVid] = useState([])
+//   const[vid,setVid] = useState([])
   
 //   useEffect(()=>{
     
@@ -33,7 +33,7 @@ function App() {
       </div>
       <div className="Right">
         <div className='VideoList'>
-          <VideoList data={data}/>
+          <VideoList />
         </div>
       </div>
      
