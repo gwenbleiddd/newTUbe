@@ -1,0 +1,59 @@
+.App{
+  margin: 0 auto;
+  width: 80%;
+  display: grid;
+  background-color: aqua;
+  grid-template-columns: 1fr 1fr;
+  gap:5rem;
+}
+.Left{
+    display: grid;
+    grid-template-rows: 1fr;
+    gap:5rem;
+    padding: 15px;
+}
+.Right{
+    padding: 15px;
+}
+
+.Search{
+    border-style: grove;
+    background-color: aquamarine;
+    border-radius: .5rem;
+    padding: 15px;
+}
+.Search input{
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 70%;
+    background: #f1f1f1;
+    
+}
+.Search button{
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; 
+  cursor: pointer;
+}
+
+
+.VideoPlayer{
+    border-style: grove;
+    background-color: rgb(98, 141, 127);
+    border-radius: .5rem;
+    padding: 15px;
+}
+.VideoList{
+    border-style: grove;
+    background-color: rgb(42, 61, 56);
+    border-radius: .5rem;
+    padding: 15px;
+}
+
