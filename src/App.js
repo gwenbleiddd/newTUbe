@@ -1,33 +1,37 @@
 import Search from './components/Search'
 import VideoPlayer from './components/VideoPlayer'
 import VideoList from './components/VideoList'
-import data from './exampleVideoData.json'
+//import data from './exampleVideoData.json'
 import { useState } from 'react'
+import youtubeApi from './api/Youtube'
 
 function App() {
-  const[userInput,setUserInput] = useState('gibrish');
+  const[userInput,setUserInput] = useState('');
   const[vidKey,setVidKey] = useState('');
+  const[title,setTitle] = useState('');
+  const[descrip,setDescrip] = useState('');
+  const[apiData,setApiData] = useState([]);
 
-  const getSearchData = (data) =>{
+  // const getSearchData = (data) =>{
+  //   setUserInput(data)
+  // }
+  const getSearchData = async data =>{
     setUserInput(data)
+    const response = await youtubeApi.get("/search",{
+      params:{
+        q:data
+      }
+    })
+    setApiData(response.data.items);
+    console.log(response)
   }
 
-  const getVidKey = (key) =>{
+  const getVidKey = (key,title,descrip) =>{
      setVidKey(key);
+     setTitle(title);
+     setDescrip(descrip);
   }
-//   const[vid,setVid] = useState([])
-  
-//   useEffect(()=>{
-    
-//     fetch('./data.json')
-//     .then(response => response.json())
-//     .then((resJson)=>{
-//       setVid(resJson)
-//     })
-//   },[])
 
-//  vid.map((e,i)=> i===0 ?console.log(e.title):"")
-//word=>setUserInput(word)
 
   return (
     
@@ -39,12 +43,18 @@ function App() {
           <Search onSubmit={getSearchData}/>
         </div>
         <div className="VideoPlayer">
-          <VideoPlayer fileData={data} vidKey={vidKey}/>
+          <VideoPlayer 
+          fileData={apiData} 
+          vidKey={vidKey}
+          title={title}
+          descrip={descrip}
+          />
+          
         </div>
       </div>
       <div className="Right">
         <div className='VideoList' >
-          <VideoList fileData={data} searchData={userInput} getVidKey={getVidKey}/>
+          <VideoList fileData={apiData} searchData={userInput} getVidKey={getVidKey}/>
         </div>
       </div>
      

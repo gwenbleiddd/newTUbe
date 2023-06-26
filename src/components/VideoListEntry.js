@@ -15,7 +15,7 @@ const VideoListEntry = ({fileData,searchData,getVidKey}) => {
         //must wrap setState within a arrow function to prevent to many re renders
         fileData.map((val)=>{
           if(val.snippet.title.toString().toLowerCase().includes(searchData.toString().toLowerCase())){//find a way to searh by a piece of the string
-       return <li key={val.id.videoId} onClick={() => getVidKey(val.id.videoId) }>
+       return <li key={val.id.videoId} onClick={() => getVidKey(val.id.videoId,val.snippet.title,val.snippet.description) }>
         <div className='thumb'>
         <img src={val.snippet.thumbnails.default.url} alt='' ></img>
       </div>

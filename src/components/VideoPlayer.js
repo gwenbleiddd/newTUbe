@@ -2,11 +2,11 @@ import React from 'react'
 import YouTube from 'react-youtube'
 
 
-const VideoPlayer = ({fileData,vidKey}) => {
+const VideoPlayer = ({vidKey,title,descrip}) => {
 
-   const post = fileData.find((dataItem)=> dataItem.id);
-   const youtubeID = vidKey;
-   const onReady = (e) => {
+   
+    const youtubeID = vidKey;
+    const onReady = (e) => {
     console.log(e.target); 
   };
   
@@ -15,8 +15,8 @@ const VideoPlayer = ({fileData,vidKey}) => {
   return (
     <div>
       <h1>Video Player</h1>
-      <h3>{post.snippet.title}</h3>
-      <p>{post.snippet.description}</p>
+      <h3>{title}</h3>
+      <p>{descrip}</p>
       <div className="player">
             <YouTube videoId={youtubeID} onReady={onReady} />
       </div>
